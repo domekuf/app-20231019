@@ -1,0 +1,56 @@
+<div id="main">
+
+  <h1>Projects</h1>
+  <div id="projects">
+    <mat-card *ngFor="let project of projects$ | async">
+      <mat-card-header>
+        <mat-card-title>
+          {{project.title}}
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          {{project.brief}}
+        </p>
+        <hr/>
+        <p>
+          {{project.details}}
+        </p>
+      </mat-card-content>
+      <mat-card-footer>
+        <mat-card-actions>
+          <button color="accent" mat-raised-button (click)="onDelete(project.id)">Delete</button>
+        </mat-card-actions>
+      </mat-card-footer>
+    </mat-card>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          Add a project
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field appearance="fill">
+          <mat-label>Title</mat-label>
+          <input [(ngModel)]="newProject.title" matInput placeholder="Project #">
+          <mat-hint>Write a project title</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Brief</mat-label>
+          <input [(ngModel)]="newProject.brief" matInput placeholder="Brief description">
+          <mat-hint>Write a brief</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Detail</mat-label>
+          <input [(ngModel)]="newProject.details" matInput placeholder="Detailed description">
+          <mat-hint>Write a detailed description</mat-hint>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-footer>
+        <mat-card-actions>
+          <button color="accent" mat-raised-button (click)="onAdd()">Add</button>
+        </mat-card-actions>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+</div>

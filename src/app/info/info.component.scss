@@ -1,0 +1,19 @@
+#main {
+  padding: 2%;
+}
+#projects {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  mat-card {
+    background: #f8f8f8;
+    width: 400px;
+    height: 400px;
+    mat-card-content {
+      flex: auto;
+    };
+    mat-card-actions {
+      gap: 8px;
+    }
+  }
+}
